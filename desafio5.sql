@@ -1,5 +1,5 @@
 SELECT 
-	m.titulo AS cancoes,
+	m.titulo AS cancao,
   COUNT(*) AS reproducoes
 FROM SpotifyClone.usuario_musica AS m_u
 INNER JOIN SpotifyClone.musicas AS m
