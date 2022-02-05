@@ -12,7 +12,7 @@ CREATE TABLE SpotifyClone.albuns(
     titulo VARCHAR(50) NOT NULL,
     ano YEAR NOT NULL,
     artista_id INT NOT NULL,
-    FOREIGN KEY (artista_id) REFERENCES SpotifyClone.artistas (id)
+    FOREIGN KEY (artista_id) REFERENCES artistas (id)
 ) engine = InnoDB;
 
 CREATE TABLE SpotifyClone.musicas(
@@ -21,8 +21,8 @@ CREATE TABLE SpotifyClone.musicas(
     duracao_segundos INT NOT NULL,
     artista_id INT NOT NULL,
     album_id INT NOT NULL,
-    FOREIGN KEY (artista_id) REFERENCES SpotifyClone.artistas (id),
-    FOREIGN KEY (album_id) REFERENCES SpotifyClone.albuns (id)
+    FOREIGN KEY (artista_id) REFERENCES artistas (id),
+    FOREIGN KEY (album_id) REFERENCES albuns (id)
 ) engine = InnoDB;
 
 CREATE TABLE SpotifyClone.planos(
@@ -37,23 +37,23 @@ CREATE TABLE SpotifyClone.usuarios(
     idade INT NOT NULL,
     plano_id INT NOT NULL,
     data_assinatura DATE NOT NULL,
-    FOREIGN KEY (plano_id) REFERENCES SpotifyClone.planos (id)
+    FOREIGN KEY (plano_id) REFERENCES planos (id)
 ) engine = InnoDB;
 
 CREATE TABLE SpotifyClone.usuario_musica(
     usuario_id INT NOT NULL,
     musica_id INT NOT NULL,
     data_reproducao DATETIME NOT NULL,
-    FOREIGN KEY (usuario_id) REFERENCES SpotifyClone.usuarios (id),
-    FOREIGN KEY (musica_id) REFERENCES SpotifyClone.musicas (id),
+    FOREIGN KEY (usuario_id) REFERENCES usuarios (id),
+    FOREIGN KEY (musica_id) REFERENCES musicas (id),
     CONSTRAINT PRIMARY KEY (usuario_id, musica_id, data_reproducao)
 ) engine = InnoDB;
 
 CREATE TABLE SpotifyClone.usuario_artista(
     usuario_id INT NOT NULL,
     artista_id INT NOT NULL,
-    FOREIGN KEY (usuario_id) REFERENCES SpotifyClone.usuarios (id),
-    FOREIGN KEY (artista_id) REFERENCES SpotifyClone.artistas (id),
+    FOREIGN KEY (usuario_id) REFERENCES usuarios (id),
+    FOREIGN KEY (artista_id) REFERENCES artistas (id),
     CONSTRAINT PRIMARY KEY (usuario_id, artista_id)
 ) engine = InnoDB;
 
