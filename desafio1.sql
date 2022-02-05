@@ -124,23 +124,23 @@ VALUES
 
 INSERT INTO SpotifyClone.planos (nome, valor)
 VALUES
-  ('Gratuito', '0.00'),
+  ('Gratuito', '0'),
   ('Pessoal', '6.99'),
   ('Universitario', '5.99'),
   ('Familiar', '7.99');
   
 INSERT INTO SpotifyClone.usuarios (nome, idade, plano_id, data_assinatura)
 VALUES
-  ('Thati', '23', '5', '2019-10-20'),
-  ('Cintia', '35', '8', '2017-12-30'),
-  ('Bill', '20', '7', '2019-06-05'),
-  ('Roger', '45', '6', '2020-05-13'),
-  ('Norman', '58', '6', '2017-02-17'),
-  ('Patrick', '33', '8', '2017-01-06'),
-  ('Vivian', '26', '7', '2018-01-05'),
-  ('Carol', '19', '7', '2018-02-14'),
-  ('Angelina', '42', '8', '2018-04-29'),
-  ('Paul', '46', '8', '2017-01-17');
+  ('Thati', '23', '1', '2019-10-20'),
+  ('Cintia', '35', '4', '2017-12-30'),
+  ('Bill', '20', '3', '2019-06-05'),
+  ('Roger', '45', '2', '2020-05-13'),
+  ('Norman', '58', '2', '2017-02-17'),
+  ('Patrick', '33', '4', '2017-01-06'),
+  ('Vivian', '26', '3', '2018-01-05'),
+  ('Carol', '19', '3', '2018-02-14'),
+  ('Angelina', '42', '4', '2018-04-29'),
+  ('Paul', '46', '4', '2017-01-17');
   
 INSERT INTO SpotifyClone.usuario_artista (usuario_id, artista_id)
 VALUES
@@ -207,3 +207,4 @@ VALUES
   ('10','21', '2017-12-04 05:33:43'),
   ('10','12', '2017-07-27 05:24:49'),
   ('10','13', '2017-12-25 01:03:57');
+  
