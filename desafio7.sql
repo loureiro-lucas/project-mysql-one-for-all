@@ -2,10 +2,10 @@ SELECT
 	art.nome AS artista,
 	alb.titulo AS album,
 	COUNT(u_a.artista_id) AS seguidores
-FROM SpotifyClone.usuario_artista AS u_a
-INNER JOIN SpotifyClone.artistas AS art
-	ON u_a.artista_id = art.id
+FROM SpotifyClone.artista AS art
 INNER JOIN SpotifyClone.albuns AS alb
-	ON art.id = alb.artista_id
+	ON alb.artista_id = art.id
+INNER JOIN SpotifyClone.usuario_artista AS u_a
+	ON u_a.artista_id = art.id
 GROUP BY album, artista
-ORDER BY seguidores DESC, artista ASC, artista ASC;
+ORDER BY seguidores DESC, artista ASC, album ASC;
