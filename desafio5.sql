@@ -1,9 +1,9 @@
 SELECT 
 	m.titulo AS cancao,
-  COUNT(*) AS reproducoes
-FROM SpotifyClone.usuario_musica AS m_u
+  COUNT(u_m.usuario_id) AS reproducoes
+FROM SpotifyClone.usuario_musica AS u_m
 INNER JOIN SpotifyClone.musicas AS m
-	ON m_u.musica_id = m.id
-GROUP BY m_u.musica_id
-ORDER BY reproducoes DESC, cancoes ASC
+	ON u_m.musica_id = m.id
+GROUP BY u_m.musica_id
+ORDER BY reproducoes DESC, cancao ASC
 LIMIT 2;
